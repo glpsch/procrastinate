@@ -1,14 +1,14 @@
 let phrases = [
-    { text: 'отправить другу смешную гифку', image: 'https://code.s3.yandex.net/web-code/procrastinate/1.gif' },
-    { text: 'посмотреть скидки на авиабилеты', image: 'https://code.s3.yandex.net/web-code/procrastinate/2.png' },
-    { text: 'разобраться, о чём поют рэперы', image: 'https://code.s3.yandex.net/web-code/procrastinate/3.png' },
-    { text: 'Юрий Дудь', image: 'https://code.s3.yandex.net/web-code/procrastinate/4.png' },
-    { text: 'расставить книги на полке по цвету', image: 'https://code.s3.yandex.net/web-code/procrastinate/5.png' },
-    { text: 'читать про зарплаты в Сан-Франциско', image: 'https://code.s3.yandex.net/web-code/procrastinate/6.png' },
-    { text: 'прочитать новости и ужаснуться в комментариях', image: 'https://code.s3.yandex.net/web-code/procrastinate/7.png' },
-    { text: 'попасть в поток грустных песен и вспомнить все ошибки молодости', image: 'https://code.s3.yandex.net/web-code/procrastinate/8.png' },
-    { text: 'посмотреть трейлер сериала и заодно первый сезон', image: 'https://code.s3.yandex.net/web-code/procrastinate/9.png' },
-    { text: 'проверить непрочитанное в Telegram-каналах', image: 'https://code.s3.yandex.net/web-code/procrastinate/10.png' }
+    { text: 'send your bestie a funny gif', image: 'https://code.s3.yandex.net/web-code/procrastinate/1.gif' },
+    { text: 'browse flight ticket offers', image: 'https://code.s3.yandex.net/web-code/procrastinate/2.png' },
+    { text: 'find out what rappers are singing about', image: 'https://code.s3.yandex.net/web-code/procrastinate/3.png' },
+    { text: 'start a vlog', image: 'https://code.s3.yandex.net/web-code/procrastinate/4.png' },
+    { text: 'sort all your books by color', image: 'https://code.s3.yandex.net/web-code/procrastinate/5.png' },
+    { text: 'google San Francisco salaries', image: 'https://code.s3.yandex.net/web-code/procrastinate/6.png' },
+    { text: 'read the news and get stressed', image: 'https://code.s3.yandex.net/web-code/procrastinate/7.png' },
+    { text: 'listen to sad music and remember all the things that went wrong in your life', image: 'https://code.s3.yandex.net/web-code/procrastinate/8.png' },
+    { text: 'find a random show and watch the whole season', image: 'https://code.s3.yandex.net/web-code/procrastinate/9.png' },
+    { text: 'check your messengers', image: 'https://code.s3.yandex.net/web-code/procrastinate/10.png' }
   ];
   
   function getRandomElement(arr) {
@@ -20,6 +20,8 @@ let phrases = [
   let phrase = document.querySelector('.phrase');
   let advice = document.querySelector('.advice');
   let image = document.querySelector('.image');
+  let delayInMilliseconds = 1000;
+
   
   button.addEventListener('click', function () {
     let randomElement = getRandomElement(phrases);
@@ -35,7 +37,11 @@ let phrases = [
     }
   });
   
-  for (let i=0; i<=2; i=i+1) {
-      smoothly(phrase, 'textContent', phrases[i].text);
-    smoothly(image, 'src', phrases[i].image);
-  }
+
+
+ setTimeout(function(){
+    for (let i=0; i<=2; i=i+1) {
+        smoothly(phrase, 'textContent', phrases[i].text);
+        smoothly(image, 'src', phrases[i].image);
+    }
+ },delayInMilliseconds); 
